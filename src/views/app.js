@@ -8,7 +8,9 @@ var AppView = Backbone.View.extend({
 
   // initialize is called by Backbone
   initialize: function() {
-  	this.videos = new Videos();
+  	this.videos = new Videos(window.exampleVideoData);
+    //this.videos = window.exampleVideoData;
+    console.log(this.videos);
   	// call render to paint the page
     this.render();
   },
@@ -20,8 +22,8 @@ var AppView = Backbone.View.extend({
     // invoke new components
     // new SearchView();
     new VideoListView({
-
-    	collection: this.videos});
+    	collection: this.videos
+    });
     //new VideoPlayerView();
     // // return the AppView
     return this;
